@@ -10,6 +10,7 @@ import Candidate from "./components/register/Candidate";
 import Vote from "./components/Vote";
 import Lists from "./components/Lists";
 import ElectionCommission from "./components/ElectionCommission";
+import VoteArena from "./pages/VoteArena";
 import store from "./app/store";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="/voterRegister" element={<Voter />} />
               <Route path="/candidateRegister" element={<Candidate />} />
               <Route path="/Vote" element={<Vote />} />
+              <Route path="/vote-arena" element={<VoteArena />} />
               <Route path="/Lists" element={<Lists />} />
               <Route
                 path="/ElectionCommission"

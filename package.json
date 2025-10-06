@@ -20,6 +20,7 @@
     "fawn": "^2.1.5",
     "flowbite": "^2.2.0",
     "flowbite-react": "^0.7.0",
+    "framer-motion": "^10.18.0",
     "fs": "^0.0.1-security",
     "https": "^1.0.0",
     "jimp": "^1.6.0",
