@@ -27,7 +27,7 @@ function Voter() {
       } else if (FormData.age < 18) {
         ToastFailure("Age are not capable ! 💔 ");
         return null;
-      } else if (EthAccount == 0) {
+      } else if (!EthAccount || EthAccount === 0) {
         ToastFailure("Please connect Metamask ! 💔 ");
         return null;
       } else if (await AccountVerification(EthAccount)) {

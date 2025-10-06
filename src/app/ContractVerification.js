@@ -1,4 +1,4 @@
-import { web3, ContractInstance } from "./ConnectChain";
+import { ContractInstance } from "./ConnectChain";
 
 
 export async function AccountVerification(address) {
@@ -17,9 +17,9 @@ export async function AccountVerification(address) {
 export const DuplicateVoteVerification = async (address) => {
   const listOfVoter = await ContractInstance.methods.VoterList().call();
   const SingleArray = listOfVoter.filter(
-    (item) => item.Address.toUpperCase() == address.toUpperCase()
+    (item) => item.Address.toUpperCase() === address.toUpperCase()
   );
-  return parseInt(SingleArray[0].voteCandidateId) != 0;
+  return parseInt(SingleArray[0].voteCandidateId) !== 0;
 };
 
 export async function voterVerification(address) {

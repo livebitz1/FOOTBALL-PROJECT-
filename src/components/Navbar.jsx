@@ -61,7 +61,7 @@ function Navbar() {
     } else {
       setAccount({ metamask: false });
     }
-  }, [Counter]);
+  }, [Counter, Dispatch]);
 
   useEffect(() => {
     const fetching = async () => {
@@ -70,7 +70,7 @@ function Navbar() {
           .datetimes()
           .call();
 
-        if (StartDate == 0 || EndDate == 0) {
+        if (StartDate === 0 || EndDate === 0) {
           setVoteDate({
             StartDate: 0,
             EndDate: 0,
@@ -84,7 +84,7 @@ function Navbar() {
           return null;
         } else if (new Date().getTime() >= parseInt(EndDate)) {
           return null;
-        } else if (StartDate != 0 || EndDate != 0) {
+        } else if (StartDate !== 0 || EndDate !== 0) {
           setVoteDate({
             StartDate: ConvertDate(parseInt(StartDate)),
             EndDate: ConvertDate(parseInt(EndDate)),
@@ -101,7 +101,7 @@ function Navbar() {
       }
     };
     fetching();
-  }, [ReduxCounter]);
+  }, [ReduxCounter, Dispatch]);
 
   useEffect(() => {
     const fetching = async () => {
@@ -115,7 +115,7 @@ function Navbar() {
       }
     };
     fetching();
-  }, [ReduxCounter]);
+  }, [ReduxCounter, Dispatch]);
 
   const HandleConnectMetamask = async () => {
     if (window.ethereum) {

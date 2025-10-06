@@ -21,7 +21,7 @@ function ElectionCommission() {
   const HandleSubmit = async (event) => {
     event.preventDefault();
     try {
-      if (EthAccount == 0) {
+      if (!EthAccount || EthAccount === 0) {
         ToastFailure("Please connect Metamask ! 💔 ");
         return null;
       } else if (!(await ElectionOwnerVerification(EthAccount))) {
@@ -47,7 +47,7 @@ function ElectionCommission() {
 
   const StopElection = async () => {
     try {
-      if (EthAccount == 0) {
+      if (!EthAccount || EthAccount === 0) {
         ToastFailure("Please connect Metamask ! 💔 ");
         return null;
       } else if (!(await ElectionOwnerVerification(EthAccount))) {
@@ -73,13 +73,13 @@ function ElectionCommission() {
 
   const HandelShowResult = async () => {
     try {
-      if (EthAccount == 0) {
+      if (!EthAccount || EthAccount === 0) {
         ToastFailure("Please connect Metamask ! 💔 ");
         return null;
       } else if (!(await ElectionOwnerVerification(EthAccount))) {
         ToastFailure("Your are not owner ! 💔");
         return null;
-      } else if (VotingDate.StartDate != 0 || VotingDate.EndDate != 0) {
+      } else if (VotingDate.StartDate !== 0 || VotingDate.EndDate !== 0) {
         ToastFailure("Voting is running ! 💔");
         return null;
       } else {
@@ -100,7 +100,7 @@ function ElectionCommission() {
 
   const HandelClearContractData = async () => {
     try {
-      if (EthAccount == 0) {
+      if (!EthAccount || EthAccount === 0) {
         ToastFailure("Please connect Metamask ! 💔 ");
         return null;
       } else if (!(await ElectionOwnerVerification(EthAccount))) {

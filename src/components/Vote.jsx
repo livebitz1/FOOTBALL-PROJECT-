@@ -16,7 +16,7 @@ function Vote() {
 
   const HandleVoteSubmit = async (event) => {
     event.preventDefault();
-    if (EthAccount == 0) {
+    if (!EthAccount || EthAccount === 0) {
       ToastFailure("Please connect Metamask ! 💔 ");
       return null;
     } else if (!(await voterVerification(EthAccount))) {
@@ -25,7 +25,7 @@ function Vote() {
     } else if (await DuplicateVoteVerification(EthAccount)) {
       ToastFailure("You have only 1 change ! 💔 ");
       return null;
-    } else if (VotingDate.StartDate == 0 || VotingDate.EndDate == 0) {
+    } else if (VotingDate.StartDate === 0 || VotingDate.EndDate === 0) {
       ToastFailure("Voting are closed ! 💔 ");
       return null;
     }
