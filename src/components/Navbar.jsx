@@ -38,7 +38,7 @@ function Navbar() {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("metamask") == "true") {
+    if (localStorage.getItem("metamask") === "true") {
       const web3 = new Web3(window.ethereum);
       window.ethereum
         .request({
@@ -146,12 +146,12 @@ function Navbar() {
     <nav className="border-gray-200 z-10 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 rounded-xl sm:mt-4  sticky top-0">
       <Toaster position="left" />
       <div className="flex relative flex-wrap items-center justify-between mx-auto p-4">
-        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             Gigapol{" "}
             <span className="text-cyan-500 text-sm font-light">by kunal</span>
           </span>
-        </a>
+        </Link>
         <button
           data-collapse-toggle="navbar-solid-bg"
           onClick={() => {
@@ -276,7 +276,7 @@ function Navbar() {
           <p className="tracking-tighter text-sm text-cyan-500 md:text-sm dark:text-cyan-400 ">
             Voting Status :
           </p>
-          {VotingDate.StartDate != 0 ? (
+          {VotingDate.StartDate !== 0 ? (
             <p className="tracking-tighter flex gap-2 text-sm text-gray-500 md:text-sm dark:text-gray-400">
               <b className="text-cyan-300">{VoteDate.StartDate}</b>
               To

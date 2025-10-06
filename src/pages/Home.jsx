@@ -1,6 +1,6 @@
 import React from "react";
 import blue_block from "../assets/images/blue_hexagonal.png";
-import { FaUserTie, FaUsers, FaGithub } from "react-icons/fa";
+import { FaUserTie, FaUsers } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 function Home() {
@@ -22,23 +22,19 @@ function Home() {
 
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-          <Link to="/voterRegister">
-            <a
-              href="#watch-video"
-              className="inline-flex justify-center  gap-3 items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-            >
-              <FaUsers />
-              voter register
-            </a>
+          <Link
+            to="/voterRegister"
+            className="inline-flex justify-center gap-3 items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+          >
+            <FaUsers />
+            voter register
           </Link>
-          <Link to="/candidateRegister">
-            <a
-              href="#watch-video"
-              className="inline-flex justify-center gap-3 items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-            >
-              <FaUserTie />
-              Candidate register
-            </a>
+          <Link
+            to="/candidateRegister"
+            className="inline-flex justify-center gap-3 items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+          >
+            <FaUserTie />
+            Candidate register
           </Link>
         </div>
         <div className="flex justify-center">
